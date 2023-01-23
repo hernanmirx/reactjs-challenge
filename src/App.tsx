@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { StyledEngineProvider, ThemeProvider } from '@mui/system';
+import SupBar from './components/SupBar';
+import InfBar from './components/InfBar';
+import Cart from './components/Cart';
+import Also from './components/Also';
+import Footer from './components/Footer';
+import { CustomTheme } from './components/CustomTheme';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={CustomTheme}>
+          <SupBar/>
+          <InfBar/>
+          <Cart/>
+          <Also/>
+          <Footer/>
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </>
   );
 }
 

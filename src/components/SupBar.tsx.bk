@@ -1,0 +1,44 @@
+import React from 'react'
+import { Container, AppBar, Toolbar, Button, IconButton, makeStyles } from '@mui/material'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import '../styles/index.css'
+
+const useStyle = makeStyles((theme)=> ({
+    root: {
+        flexGrow:1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        flexGrow: 1,
+    },
+}))
+
+const SupBar = () => {
+  return (
+    <div className='navBarDark'>
+        <Container>
+            
+                <Button className='buttons' color='inherit'>
+                    Logo
+                </Button>
+                
+                <input type="text" className='search' placeholder="Search Products" />
+                <IconButton aria-label='Sign In' color='inherit'>
+                    <PersonOutlineOutlinedIcon/>
+                    Sign In
+                </IconButton>
+                <IconButton aria-label='Cart' color='inherit'>
+                    <ShoppingBagOutlinedIcon/>
+                    Cart
+                </IconButton>
+                       
+        </Container>
+    </div>
+  )
+}
+
+export default SupBar
